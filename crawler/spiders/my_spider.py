@@ -10,14 +10,20 @@ class CrawlingSpider(scrapy.Spider):
 
     def parse(self,response):
         for items in response.css("div.dv-item"):
+            #raw_images_urls = items.css('img.imageThumb1::attr(data-src)').getall()
+            #clean_img_urls = []
+            #for img_url in raw_images_urls:
+                #clean_img_urls.append(response.urljoin(img_url))
             yield {
-                'title': response.css('div.pn1 a::attr(title)').get(),
-                #'time' : response.css('p.time::text').get(), #with respect to current time of browsed => Fix later
-                #'price': response.css('label.a-txt-cl1::text').get(),
-                #'area' :response.css('label.a-txt-cl2::text').get(),
-                #'neighborhood': response.css('label.rvVitri ::text').get(),
-                #'description' : response.css('label.lb-des ::text').get()
+                'title': items.css('div.pn1 a span::text').get(),
+                'time' : items.css('p.time::text').get(), #with respect to current time of browsed => Fix later
+                'price': items.css('label.a-txt-cl1::text').get(),
+                'area' : items.css('label.a-txt-cl2::text').get(),
+                'neighborhood': items.css('label.rvVitri ::text').get(),
+                'description' : items.css('label.lb-des ::text').get(),
+                'seller': items.css('div.fullname::text').get(),
+                'img_url': items.css('img.imageThumb1::attr(data-src)').getall(),
             }
-        next_page = response.css('div.dv-pt-item  a::attr(href)').getall()[1]
+        next_page = response.css('div.dv-pt-item  a::attr(href)').getall()[-1]
         if next_page is not None:
             yield response.follow(next_page,callback = self.parse)

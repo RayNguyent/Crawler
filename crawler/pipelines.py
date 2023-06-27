@@ -6,8 +6,13 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+from scrapy.pipelines.images import ImagesPipeline
 
+#class CrawlerPipeline:
+#    def process_item(self, item, spider):
+#       return item
 
-class CrawlerPipeline:
-    def process_item(self, item, spider):
-        return item
+class customImagePipeline(ImagesPipeline):
+    def file_path(self, request, response=None, info=None, *, item=None):
+        return request.url.split('/')[-1]
+ 
