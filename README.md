@@ -1,7 +1,19 @@
 # Crawler
+Website URL: [nhadat24h](https://nhadat24h.net/nha-dat-ban)
 ## Introduction
-Here is my crawler project developed using `scrapy` library. Check the [Reference](#Reference) for the 
+Here is my crawler project developed using the `scrapy` library. Check the [Reference](#Reference) for the source I referred to.
+## Usage
+To clone this repository into your local computer:
+
+1) Click on the green <> Code button and Copy the HTTPS of the repository
+2) Open Terminal and navigate to your desired directory in which you clone the repository
+3) Clone the repository using the following command: <br>
+`git clone <URL>`
+4) Navigate to the project directory using the following command: <br>
+`cd crawler`
+5) Run the following code: <br>
+`scrapy crawl mycrawler -o output.json`
 ## Reference
-[NeuralNine](https://www.youtube.com/watch?v=m_3gjHGxIJc)
+[John Watson Rooney](https://www.youtube.com/watch?v=s4jtkzHhLzY&t=763s)
 
 
