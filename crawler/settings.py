@@ -15,7 +15,7 @@ NEWSPIDER_MODULE = "crawler.spiders"
 #ITEM_PIPELINES = {"scrapy.pipelines.images.ImagesPipeline": 1}
 ITEM_PIPELINES = {"crawler.pipelines.customImagePipeline": 1}
 #folder
-IMAGES_STORE = "local_folder"
+IMAGES_STORE = "images"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
