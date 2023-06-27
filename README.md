@@ -14,6 +14,6 @@ To clone this repository into your local computer:
 5) Run the following code: <br>
 `scrapy crawl mycrawler -o output.json`
 ## Reference
-[John Watson Rooney](https://www.youtube.com/watch?v=s4jtkzHhLzY&t=763s)https://www.youtube.com/watch?v=s4jtkzHhLzY&t=763s)
+[John Watson Rooney](https://www.youtube.com/watch?v=s4jtkzHhLzY&t=763s)
 
 
