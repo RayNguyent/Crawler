@@ -2,7 +2,7 @@ import scrapy
 
 class CrawlingSpider(scrapy.Spider):
     name = 'mycrawler'
-    start_urls = ['https://nhadat24h.net/nha-dat-ban']
+    start_urls = ['https://nhadat24h.net/nha-dat-ban','https://nhadat24h.net/nha-dat-cho-thue']
     
     def start_requests(self):
         for url in self.start_urls:
