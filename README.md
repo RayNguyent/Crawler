@@ -5,7 +5,7 @@ Here is my crawler project developed using the `scrapy` library. Check the [Refe
 ## Usage
 To clone this repository into your local computer:
 
-1) Click on the green <> Code button and Copy the HTTPS of the repository
+1) Click on the green `<> Code` button and Copy the HTTPS of the repository
 2) Open Terminal and navigate to your desired directory in which you clone the repository
 3) Clone the repository using the following command: <br>
 `git clone <URL>`
