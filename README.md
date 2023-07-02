@@ -1,7 +1,8 @@
 # Crawler
 Website URL: [nhadat24h](https://nhadat24h.net/nha-dat-ban)
 ## Introduction
-Here is my crawler project developed using the `scrapy` library. Check the [Reference](#Reference) for the source I referred to.
+Here is my crawler project developed using the `scrapy` library. Check the [Reference](#Reference) for the source I referred to. <br>
+P/S: I only scraped some of the properties to make sure GitHub allows me to upload the data. Yet, my crawler is able to scrape all of the data from the website.
 ## Usage
 To clone this repository into your local computer:
 
