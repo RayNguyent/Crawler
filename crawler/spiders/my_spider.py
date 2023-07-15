@@ -17,7 +17,7 @@ class CrawlingSpider(scrapy.Spider):
                 clean_img_urls.append(response.urljoin(img_url))
             yield {
                 'title': items.css('div.pn1 a span::text').get(),
-                'time' : items.css('p.time::text').get(), #with respect to current time of browsed => Fix later
+                'time' : items.css('p.time::text').get(), 
                 'price': items.css('label.a-txt-cl1::text').get(),
                 'area' : items.css('label.a-txt-cl2::text').get(),
                 'locationfet': items.css('label.rvVitri ::text').get(),
