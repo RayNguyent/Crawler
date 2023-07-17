@@ -20,7 +20,7 @@ class CrawlingSpider(scrapy.Spider):
                 'time' : items.css('p.time::text').get(), 
                 'price': items.css('label.a-txt-cl1::text').get(),
                 'area' : items.css('label.a-txt-cl2::text').get(),
-                'locationfet': items.css('label.rvVitri ::text').get(),
+                'location': items.css('label.rvVitri ::text').get(),
                 'description' : items.css('label.lb-des ::text').get(),
                 'seller': items.css('div.fullname::text').get(),
                 'image_urls': clean_img_urls,
