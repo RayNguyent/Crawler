@@ -5,7 +5,7 @@ from .timestamp_utils import convert_relative_to_exact_timestamp
 
 class CrawlingSpider(scrapy.Spider):
     name = 'mycrawler'
-    start_urls = ['https://nhadat24h.net/nha-dat-ban',
+    start_urls = [#'https://nhadat24h.net/nha-dat-ban']
                 'https://nhadat24h.net/nha-dat-cho-thue']
     
     def start_requests(self):
@@ -19,9 +19,9 @@ class CrawlingSpider(scrapy.Spider):
             #for img_url in raw_images_urls:
             #    clean_img_urls.append(response.urljoin(img_url))
             yield {
-                'title': items.css('div.pn1 a span::text').get(),
-                'time' : convert_relative_to_exact_timestamp(items.css('p.time::text').get()), 
-                'post_url' : ''.join(('https://nhadat24h.net',items.css("div.dv-item a.a-title::attr(href)").get())),
+                'Title': items.css('div.pn1 a span::text').get(),
+                'Timestamp' : convert_relative_to_exact_timestamp(items.css('p.time::text').get()), 
+                'Post link' : ''.join(('https://nhadat24h.net',items.css("div.dv-item a.a-title::attr(href)").get())),
                 #'price': items.css('label.a-txt-cl1::text').get(),
                 #'area' : items.css('label.a-txt-cl2::text').get(),
                 #'location': items.css('label.rvVitri ::text').get(),
