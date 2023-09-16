@@ -2,8 +2,7 @@ import scrapy
 
 class CrawlingSpider(scrapy.Spider):
     name = 'mycrawler'
-    start_urls = [#'https://nhadat24h.net/nha-dat-ban']
-                'https://nhadat24h.net/nha-dat-cho-thue']
+    start_urls = ['https://nhadat24h.net/nha-dat-cho-thue']
     
     def start_requests(self):
         for url in self.start_urls:
@@ -25,9 +24,12 @@ class CrawlingSpider(scrapy.Spider):
         for img_url in raw_images_urls:
             clean_img_urls.append(response.urljoin(img_url))
         yield {
-            'Category': 'sale',
+            'Data source': 'https://nhadat24h.net/nha-dat-cho-thue',
+            'Agent': 'Hoang Nguyen',
+            'Category': 'rent',
             'ID': response.css('.dv-tsbds:nth-child(7) tr+ tr .col1+ td').get().split('<td>')[1].split('</td>')[0],
             'Title': response.css('#txtcontenttieudetin::text').get(),
+            'Post link': response.request.url,
             'Price': ' '.join([response.css('.strong1::text').get(),response.css("label.lb-pri-dt").get().split('</label')[1].split('>')[1].split(' ')[0]]),
             'Area' : ' '.join([response.css('.strong2::text').get(),response.css("label.lb-pri-dt").get().split('</label')[2].split('>')[1]]),
             'Location': response.css("#ContentPlaceHolder1_ctl00_lbTinhThanh::text").get(),
